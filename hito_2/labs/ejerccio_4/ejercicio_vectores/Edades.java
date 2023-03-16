@@ -20,6 +20,7 @@ public class Edades {
         }
 
         public int[] getEdades() {
+
             return Edades;
         }
         //sets

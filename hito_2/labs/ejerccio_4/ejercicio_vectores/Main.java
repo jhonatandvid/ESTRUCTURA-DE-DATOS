@@ -3,8 +3,8 @@ public class Main {
     {
         int[] edades = new int[5];
         edades[0] =33;
-        edades[1] =20;
-        edades[2] =19;
+        edades[1] =19;
+        edades[2] =20;
         edades[3] =42;
         edades[4] =25;
         ////////////////////////////
@@ -34,9 +34,11 @@ public class Main {
         obj1.Mostrar2();
         obj2.Mostrar2();
         System.out.println("\nVALORES CAMBIADOS\n");
-        intercambiarValores(obj1,obj2);
+        //intercambiarValores(obj1,obj2);
+        //obj1.Mostrar2();
+        //obj2.Mostrar2();
+        intercambiarValoresDeUnVector(obj1);
         obj1.Mostrar2();
-        obj2.Mostrar2();
     }
     //DETERMINA EDAD MAYOR
     public static int determinaMayorEdad(Edades obj1)
@@ -90,20 +92,14 @@ public class Main {
     {
         int mayorEDD = determinaMayorEdad(obj1);
         int mayorBDAIII = determinaMayorEdad(obj2);
-        //////////////////MENOR DE EDAD/////////////////////
+        //==============// MENOR DE EDAD //==============//
         int menorEDD = determinaMenorEdad(obj1);
         int menorBDAIII = determinaMenorEdad(obj2);
+        //==============// VECTORES //==============//
         int[] edades = obj1.getEdades();
         int[] edades2 = obj2.getEdades();
 
-        //int aux = edades2[0];
-        //edades2[0] = edades[3];
-        //edades[3] = aux;
-        //int aux2 = edades2[3];
-        //edades2[3] = edades[2];
-        //edades[2] = aux2;
-
-        ///MAYOR
+        //==============// MAYOR //==============//
         for(int i=0; i<edades.length ; i++)
         {
             if(edades[i]==mayorEDD)
@@ -119,7 +115,7 @@ public class Main {
                 edades2[i]=mayorEDD;
             }
         }
-        ///MENOR
+        //==============// MENOR //==============//
         for(int i=0; i<edades.length ; i++)
         {
             if(edades[i]==menorEDD)
@@ -135,8 +131,30 @@ public class Main {
                 edades2[i]=menorEDD;
             }
         }
+        //==============// MOSTRAR //==============//
         obj1.setEdades(edades);
         obj2.setEdades(edades2);
+    }
 
+    public static void intercambiarValoresDeUnVector (Edades obj1)
+    {
+        int mayorED = determinaMayorEdad(obj1);
+        //==============// MENOR DE EDAD //==============//
+        int menorED = determinaMenorEdad(obj1);
+        //==============// VECTORES //==============//
+        int[] edades = obj1.getEdades();
+        //==============// MAYOR //==============//
+        for(int i=0; i<edades.length ; i++)
+        {
+            if(edades[i]==mayorED)
+            {
+                edades[i]=menorED;
+            } else if(edades[i]==menorED)
+            {
+               edades[i]=mayorED;
+            }
+        }
+        //==============// MOSTRAR //==============//
+        obj1.setEdades(edades);
     }
 }
