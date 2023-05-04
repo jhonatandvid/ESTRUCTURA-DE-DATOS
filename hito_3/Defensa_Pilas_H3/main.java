@@ -7,9 +7,9 @@ public class main {
     public static void main(String[] argv){
         Estudiante Estudiantes1 = new Estudiante("William","Barra",33,"El alto",62,"6778933LP");
         Estudiante Estudiantes2 = new Estudiante("Maria","Mancora Lopez",25,"La paz",51,"7485966LP");
-        Estudiante Estudiantes3 = new Estudiante("Edson ivan","Condori Condori",21,"Santa cruz",80,"7425169SC");
+        Estudiante Estudiantes3 = new Estudiante("Edson ivan","Condori Condori",21,"Santa cruz",33,"7425169SC");
         Estudiante Estudiantes4 = new Estudiante("Elena","Lopez Mendoza",19,"Cochabamba",40,"4152367CB");
-        Estudiante Estudiantes5 = new Estudiante("Sergio Andres","Mendoza Alvarado",20,"Cochabamba",33,"7485961CB");
+        Estudiante Estudiantes5 = new Estudiante("Sergio Andres","Mendoza Alvarado",20,"Cochabamba",78,"7485961CB");
         //INSTANCIANDO LA CLASE//
         PilaDeEstudiantes pilaDeEstudiantes1 = new PilaDeEstudiantes();
         //AGREGANDO DATOS A LA PILA//
@@ -21,12 +21,12 @@ public class main {
         //pilaDeEstudiantes1.Mostrar();
         //EJERICIO 1:
         //CREAR UN METODO QUE DETERMINE CUANDOS ESTUDIANTES APROVARON notas mayores a 51 y la extencion sea lp
-        //Aprovados(pilaDeEstudiantes1);
-        //pilaDeEstudiantes1.Mostrar();
+        Aprovados(pilaDeEstudiantes1);
+        pilaDeEstudiantes1.Mostrar();
         //EJERCICIO 2:
         //CREAR UN METODO QUE LLEVAR EL K ESIMO
-        //kEsimoPosicion(pilaDeEstudiantes1,2);
-        //pilaDeEstudiantes1.Mostrar();
+        kEsimoPosicion(pilaDeEstudiantes1,2);
+        pilaDeEstudiantes1.Mostrar();
         //EJERCICIO 3:
         //mover a la base de la pila el estudiante con menor nota
         menor(pilaDeEstudiantes1);
@@ -34,8 +34,8 @@ public class main {
         pilaDeEstudiantes1.Mostrar();
         //Ejercicio 4:
         //Ordenar donde el cb sea cocha vallan arriba y otros  abajo
-        //Ordenar(pilaDeEstudiantes1);
-        //pilaDeEstudiantes1.Mostrar();
+        Ordenar(pilaDeEstudiantes1);
+        pilaDeEstudiantes1.Mostrar();
 
     }
     public static void Aprovados(PilaDeEstudiantes pila){
@@ -79,10 +79,10 @@ public class main {
             int menor = menor(pila);
             while (!pila.EsVacio()){
                 item = pila.eliminar();
-                    if(item.getNotafinal() < menor){
-                        auxMenor.Adicionar(item);
-                    } else {
+                    if(item.getNotafinal() == menor){
                         aux.Adicionar(item);
+                    } else {
+                        auxMenor.Adicionar(item);
                     }
             }
             pila.Vaciar(auxMenor);
