@@ -61,10 +61,9 @@ public class PilaDeClientes {
             PilaDeClientes aux = new PilaDeClientes();
             while(EsVacio()==false){
                 item = eliminar();
-                if (item != null) {
-                    item.MuestraCliente();
-                    aux.Adicionar(item);
-                }
+                item.MuestraCliente();
+                aux.Adicionar(item);
+
             }
             Vaciar(aux);
         }

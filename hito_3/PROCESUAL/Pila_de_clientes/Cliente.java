@@ -1,35 +1,34 @@
 package Pila_de_clientes;
 
 public class Cliente {
-
-    private String nombres;
-    private String apellidos;
+    private String nombre;
+    private String apellido;
     private int edad;
     private String direccion;
-    private String genero;
-    public Cliente(String nom,String ape,int ed,String dir,String gen){
-        this.nombres = nom;
-        this.apellidos = ape;
-        this.edad = ed;
-        this.direccion = dir;
-        this.genero = gen;
+    private String Genero;
 
+    public Cliente(String nombre,String apellido,int edad,String direccion,String genero){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.direccion = direccion;
+        this.Genero = genero;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getEdad() {
@@ -49,19 +48,19 @@ public class Cliente {
     }
 
     public String getGenero() {
-        return genero;
+        return Genero;
     }
 
     public void setGenero(String genero) {
-        this.genero = genero;
+        Genero = genero;
     }
     public void MuestraCliente(){
-        System.out.println("MOSTRANDO DATOS DEL CLIENTE:");
-        System.out.println("Nombre: "+nombres);
-        System.out.println("Apellidos: "+apellidos);
+        System.out.println("\nMOSTRANDO DATOS DE LOS CLIENTES: \n");
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("Apellido: "+apellido);
         System.out.println("Edad: "+edad);
         System.out.println("Direccion: "+direccion);
-        System.out.println("Genero: "+genero);
-        System.out.println();
+        System.out.println("Genero: "+Genero);
+
     }
 }
